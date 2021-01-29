@@ -15,7 +15,10 @@ func _physics_process(delta):
 	elif look_dir.x < -cos_45:
 		$AnimatedSprite.play("left")
 	elif look_dir.y > cos_45:
-		$AnimatedSprite.play("down")
+		if move_dir == Vector2.ZERO:
+			$AnimatedSprite.play("standing")
+		else:
+			$AnimatedSprite.play("down")
 	elif look_dir.y < -cos_45:
 		$AnimatedSprite.play("up")
 		
