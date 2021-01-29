@@ -16,6 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Lost Song of Despair"
+run/main_scene="res://scenes/World.tscn"
 config/icon="res://resources/sprites/icon.png"
 
 [autoload]
@@ -53,6 +54,14 @@ shoot={
 "events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
+
+[layer_names]
+
+2d_physics/layer_1="player"
+2d_physics/layer_2="enemies"
+2d_physics/layer_3="player_bullets"
+2d_physics/layer_4="enemy_bullets"
+2d_physics/layer_5="ground"
 
 [rendering]
 

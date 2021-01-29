@@ -37,7 +37,7 @@ func get_look_direction():
 
 func shoot(dir):
 	var bullet = preload("res://scenes/entities/bullets/WindBullet.tscn").instance()
-	bullet.position = position + dir*20
+	bullet.position = position + dir*10
 	bullet.rotation = dir.angle()
 	get_parent().add_child(bullet)
 	$ShootCooldown.start()
