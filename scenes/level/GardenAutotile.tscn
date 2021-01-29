@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/level/GardenAutotile.tres" type="TileSet" id=1]
+
+[node name="TileMap" type="TileMap"]
+tile_set = ExtResource( 1 )
+cell_y_sort = true
+format = 1
