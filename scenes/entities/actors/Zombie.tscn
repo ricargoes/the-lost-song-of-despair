@@ -15,8 +15,9 @@ animations = [ {
 "speed": 7.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.84081, 5.16593 )
+[sub_resource type="CapsuleShape2D" id=2]
+radius = 5.21049
+height = 7.69287
 
 [node name="Zombie" instance=ExtResource( 3 )]
 
@@ -25,4 +26,5 @@ frames = SubResource( 1 )
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 7 )
+rotation = 1.5708
 shape = SubResource( 2 )

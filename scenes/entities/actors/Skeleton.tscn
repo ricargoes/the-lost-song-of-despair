@@ -15,8 +15,8 @@ animations = [ {
 "speed": 10.0
 } ]
 
-[sub_resource type="RectangleShape2D" id=2]
-extents = Vector2( 8.09628, 5.05367 )
+[sub_resource type="CircleShape2D" id=2]
+radius = 6.3661
 
 [node name="Skeleton" instance=ExtResource( 4 )]
 
