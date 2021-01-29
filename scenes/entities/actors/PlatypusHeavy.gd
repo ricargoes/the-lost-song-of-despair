@@ -9,6 +9,8 @@ func _physics_process(delta):
 		$AnimatedSprite.play("standing")
 	else:
 		$AnimatedSprite.play("running_down")
+	
+	var look_dir = get_look_direction()
 		
 	var collision = move_and_collide(move_dir*Global.char_max_speed)
 
@@ -26,6 +28,7 @@ func get_move_direction():
 		move_vector.y += 1
 	return move_vector.normalized()
 	
-	
+func get_look_direction():
+	return get_global_transform().get_origin().direction_to(get_global_mouse_position()).normalized()
 	
 	 
