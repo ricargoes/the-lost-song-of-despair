@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=6 format=2]
 
 [ext_resource path="res://scenes/entities/actors/Skeleton.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/actors/PlatypusHeavy.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/level/GardenAutotile.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/entities/actors/Spider.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/entities/actors/Zombie.tscn" type="PackedScene" id=5]
 
 [node name="World" type="Node2D"]
 
@@ -50,3 +51,27 @@ position = Vector2( 289.595, 51.6333 )
 
 [node name="Spider7" parent="Node2D" instance=ExtResource( 4 )]
 position = Vector2( 963.072, 42.6536 )
+
+[node name="Zombie" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 426.925, 304.437 )
+
+[node name="Zombie2" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 576.765, 495.899 )
+
+[node name="Zombie3" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 956.122, 315.14 )
+
+[node name="Zombie4" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 874.067, 36.8654 )
+
+[node name="Zombie5" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 556.549, 64.2172 )
+
+[node name="Zombie6" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 596.982, -114.164 )
+
+[node name="Zombie7" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 315.14, 568.441 )
+
+[node name="Zombie8" parent="Node2D" instance=ExtResource( 5 )]
+position = Vector2( 863.364, 579.144 )
