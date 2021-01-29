@@ -2,6 +2,9 @@ extends KinematicBody2D
 
 const cos_45 = 1/sqrt(2)
 
+export var hits = 2
+export var relative_speed = 0.75
+
 func _ready():
 	set_physics_process(true)
 	$AnimatedSprite.play("down")
@@ -22,10 +25,12 @@ func _physics_process(delta):
 		elif move_dir.y < -cos_45:
 			$AnimatedSprite.play("up")
 		
-		move_and_collide(move_dir*Global.char_max_speed*0.75)
+		move_and_collide(move_dir*Global.char_max_speed*relative_speed)
 
-func hit():
-	die()
+func hit(damage=1):
+	hits -= damage
+	if hits <= 0:
+		die()
 
 
 func die():
