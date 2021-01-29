@@ -1,18 +1,24 @@
 extends KinematicBody2D
 
+const cos_45 = 1/sqrt(2)
+
 func _ready():
 	set_physics_process(true)
 
 func _physics_process(delta):
 	var move_dir = get_move_direction()
-	if move_dir == Vector2.ZERO:
-		$AnimatedSprite.play("standing")
-	else:
-		$AnimatedSprite.play("running_down")
+	var collision = move_and_collide(move_dir*Global.char_max_speed)
 	
 	var look_dir = get_look_direction()
+	if look_dir.x > cos_45:
+		$AnimatedSprite.play("right")
+	elif look_dir.x < -cos_45:
+		$AnimatedSprite.play("left")
+	elif look_dir.y > cos_45:
+		$AnimatedSprite.play("down")
+	elif look_dir.y < -cos_45:
+		$AnimatedSprite.play("up")
 		
-	var collision = move_and_collide(move_dir*Global.char_max_speed)
 	
 	if Input.is_action_pressed("shoot") and $ShootCooldown.is_stopped():
 		shoot(look_dir)
