@@ -13,6 +13,9 @@ func _physics_process(delta):
 	var look_dir = get_look_direction()
 		
 	var collision = move_and_collide(move_dir*Global.char_max_speed)
+	
+	if Input.is_action_pressed("shoot") and $ShootCooldown.is_stopped():
+		shoot(look_dir)
 
 
 func get_move_direction():
@@ -31,4 +34,11 @@ func get_move_direction():
 func get_look_direction():
 	return get_global_transform().get_origin().direction_to(get_global_mouse_position()).normalized()
 	
-	 
+
+func shoot(dir):
+	var bullet = preload("res://scenes/entities/bullets/WindBullet.tscn").instance()
+	bullet.position = position + dir*20
+	bullet.rotation = dir.angle()
+	get_parent().add_child(bullet)
+	$ShootCooldown.start()
+	
