@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Lost Song of Despair"
-run/main_scene="res://scenes/World.tscn"
+run/main_scene="res://scenes/ui/Main.tscn"
 config/icon="res://resources/sprites/icon.png"
 
 [autoload]

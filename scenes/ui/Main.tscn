@@ -1,0 +1,146 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/ui/theme.tres" type="Theme" id=1]
+[ext_resource path="res://scenes/ui/Main.gd" type="Script" id=2]
+[ext_resource path="res://resources/sprites/platypusheavy/Dukestanding1.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/ui/background_table.png" type="Texture" id=4]
+[ext_resource path="res://resources/sprites/ui/9patch.png" type="Texture" id=5]
+
+[sub_resource type="StyleBoxLine" id=1]
+grow_begin = -3.0
+grow_end = -3.0
+thickness = 2
+vertical = true
+
+[node name="Menu" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="."]
+margin_right = 1920.0
+margin_bottom = 1080.0
+texture = ExtResource( 4 )
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="CenterContainer" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Main" type="VBoxContainer" parent="Main"]
+margin_left = 335.0
+margin_top = 55.0
+margin_right = 635.0
+margin_bottom = 485.0
+rect_min_size = Vector2( 300, 0 )
+custom_constants/separation = 15
+alignment = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TextureRect" type="TextureRect" parent="Main/Main"]
+margin_right = 300.0
+margin_bottom = 270.0
+rect_min_size = Vector2( 0, 270 )
+texture = ExtResource( 3 )
+expand = true
+stretch_mode = 5
+
+[node name="Story" type="Button" parent="Main/Main"]
+margin_left = 75.0
+margin_top = 285.0
+margin_right = 225.0
+margin_bottom = 305.0
+rect_min_size = Vector2( 150, 20 )
+size_flags_horizontal = 4
+text = "Story mode"
+
+[node name="Endless" type="Button" parent="Main/Main"]
+margin_left = 75.0
+margin_top = 320.0
+margin_right = 225.0
+margin_bottom = 340.0
+rect_min_size = Vector2( 150, 20 )
+size_flags_horizontal = 4
+text = "Endless mode"
+
+[node name="HSeparator" type="NinePatchRect" parent="Main/Main"]
+margin_top = 355.0
+margin_right = 300.0
+margin_bottom = 395.0
+rect_min_size = Vector2( 0, 40 )
+texture = ExtResource( 5 )
+region_rect = Rect2( 0, 0, 64, 64 )
+patch_margin_left = 13
+patch_margin_top = 12
+patch_margin_right = 14
+patch_margin_bottom = 11
+
+[node name="Margin" type="MarginContainer" parent="Main/Main/HSeparator"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_constants/margin_right = 5
+custom_constants/margin_top = 5
+custom_constants/margin_left = 5
+custom_constants/margin_bottom = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Main/Main/HSeparator/Margin"]
+margin_left = 5.0
+margin_top = 5.0
+margin_right = 295.0
+margin_bottom = 35.0
+custom_constants/separation = 10
+
+[node name="TextureRect" type="TextureRect" parent="Main/Main/HSeparator/Margin/HBoxContainer"]
+margin_right = 40.0
+margin_bottom = 30.0
+rect_min_size = Vector2( 40, 0 )
+expand = true
+stretch_mode = 5
+
+[node name="VSeparator" type="VSeparator" parent="Main/Main/HSeparator/Margin/HBoxContainer"]
+margin_left = 50.0
+margin_right = 54.0
+margin_bottom = 30.0
+custom_styles/separator = SubResource( 1 )
+
+[node name="TextEdit" type="TextEdit" parent="Main/Main/HSeparator/Margin/HBoxContainer"]
+margin_left = 64.0
+margin_right = 290.0
+margin_bottom = 30.0
+size_flags_horizontal = 3
+text = "Pick your poison!"
+readonly = true
+wrap_enabled = true
+
+[node name="Quit" type="Button" parent="Main/Main"]
+margin_left = 75.0
+margin_top = 410.0
+margin_right = 225.0
+margin_bottom = 430.0
+rect_min_size = Vector2( 150, 20 )
+size_flags_horizontal = 4
+text = "Quit"
+[connection signal="mouse_entered" from="Main/Main/Story" to="Main" method="_on_Story_mouse_entered"]
+[connection signal="mouse_exited" from="Main/Main/Story" to="Main" method="default_explanation"]
+[connection signal="pressed" from="Main/Main/Story" to="Main" method="_on_Story_pressed"]
+[connection signal="mouse_entered" from="Main/Main/Endless" to="Main" method="_on_Endless_mouse_entered"]
+[connection signal="mouse_exited" from="Main/Main/Endless" to="Main" method="default_explanation"]
+[connection signal="pressed" from="Main/Main/Endless" to="Main" method="_on_Endless_pressed"]
+[connection signal="mouse_entered" from="Main/Main/Quit" to="Main" method="_on_Quit_mouse_entered"]
+[connection signal="mouse_exited" from="Main/Main/Quit" to="Main" method="default_explanation"]
+[connection signal="pressed" from="Main/Main/Quit" to="Main" method="_on_Quit_pressed"]
