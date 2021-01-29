@@ -12,3 +12,10 @@ func _physics_process(delta):
 	if points.size() > 0:
 		var move_dir = (points[1] - position).normalized()
 		move_and_collide(move_dir*Global.char_max_speed*0.75)
+
+func hit():
+	die()
+
+
+func die():
+	queue_free()

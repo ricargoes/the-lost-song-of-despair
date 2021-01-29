@@ -8,7 +8,11 @@ func _ready():
 
 
 func _physics_process(delta):
-	move_and_collide(bullet_speed*Vector2(cos(rotation), sin(rotation)))
+	var collision = move_and_collide(bullet_speed*Vector2(cos(rotation), sin(rotation)))
+	if collision:
+		if collision.collider.is_in_group("enemies"):
+			collision.collider.hit()
+		queue_free()
 	
 
 func die():
