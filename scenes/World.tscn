@@ -6,7 +6,7 @@
 [ext_resource path="res://scenes/entities/actors/Spider.tscn" type="PackedScene" id=4]
 [ext_resource path="res://scenes/entities/actors/Zombie.tscn" type="PackedScene" id=5]
 
-[node name="World" type="Node2D"]
+[node name="World" type="YSort"]
 
 [node name="Navigation2D" type="Navigation2D" parent="." groups=[
 "nav",
@@ -18,64 +18,65 @@ tile_data = PoolIntArray( -131065, 0, 0, -131064, 0, 0, -131063, 0, 0, -65535, 4
 [node name="PlatypusHeavy" parent="." instance=ExtResource( 2 )]
 position = Vector2( 621.797, 268.197 )
 
-[node name="Node2D" type="Node2D" parent="."]
+[node name="Enemies" type="YSort" parent="."]
 
-[node name="Skeleton" parent="Node2D" instance=ExtResource( 1 )]
+[node name="Skeleton" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 791.106, 67.4238 )
 
-[node name="Skeleton2" parent="Node2D" instance=ExtResource( 1 )]
+[node name="Skeleton2" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 428.516, 71.9187 )
 
-[node name="Skeleton3" parent="Node2D" instance=ExtResource( 1 )]
+[node name="Skeleton3" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 346.109, 274.19 )
 
-[node name="Skeleton4" parent="Node2D" instance=ExtResource( 1 )]
+[node name="Skeleton4" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 652.138, 427.631 )
 
-[node name="Skeleton5" parent="Node2D" instance=ExtResource( 1 )]
+[node name="Skeleton5" parent="Enemies" instance=ExtResource( 1 )]
 position = Vector2( 767.955, 110.471 )
 
-[node name="Spider" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 913.684, 381.637 )
 
-[node name="Spider2" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider2" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 920.419, 475.924 )
 
-[node name="Spider3" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider3" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 924.909, 523.067 )
 
-[node name="Spider4" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider4" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 267.146, 464.699 )
 
-[node name="Spider5" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider5" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 500.618, 498.373 )
 
-[node name="Spider6" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider6" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 289.595, 51.6333 )
 
-[node name="Spider7" parent="Node2D" instance=ExtResource( 4 )]
+[node name="Spider7" parent="Enemies" instance=ExtResource( 4 )]
 position = Vector2( 963.072, 42.6536 )
 
-[node name="Zombie" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 426.925, 304.437 )
 
-[node name="Zombie2" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie2" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 576.765, 495.899 )
 
-[node name="Zombie3" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie3" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 956.122, 315.14 )
+relative_speed = 0.1
 
-[node name="Zombie4" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie4" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 874.067, 36.8654 )
 
-[node name="Zombie5" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie5" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 556.549, 64.2172 )
 
-[node name="Zombie6" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie6" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 596.982, -114.164 )
 
-[node name="Zombie7" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie7" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 315.14, 568.441 )
 
-[node name="Zombie8" parent="Node2D" instance=ExtResource( 5 )]
+[node name="Zombie8" parent="Enemies" instance=ExtResource( 5 )]
 position = Vector2( 863.364, 579.144 )
