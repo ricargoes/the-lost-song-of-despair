@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/Duke_running_FW5.Png-fd6977619da8c63dff67427863646735.stex"
+path="res://.import/Duke_running_FW4.Png-4ba4fcdcb618e302f01d207c73081a45.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/main/Duke_running_FW5.Png"
-dest_files=[ "res://.import/Duke_running_FW5.Png-fd6977619da8c63dff67427863646735.stex" ]
+source_file="res://resources/sprites/platypusheavy/Duke_running_FW4.Png"
+dest_files=[ "res://.import/Duke_running_FW4.Png-4ba4fcdcb618e302f01d207c73081a45.stex" ]
 
 [params]
 
