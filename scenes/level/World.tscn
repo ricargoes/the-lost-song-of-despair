@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scenes/entities/actors/Zombie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/actors/Skeleton.tscn" type="PackedScene" id=2]
@@ -11,6 +11,7 @@
 [ext_resource path="res://scenes/entities/hazards/ZombieSpawner.tscn" type="PackedScene" id=9]
 [ext_resource path="res://scenes/TrackPlayer.tscn" type="PackedScene" id=10]
 [ext_resource path="res://scenes/entities/hazards/Cassette.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/ui/UI.tscn" type="PackedScene" id=12]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
@@ -79,4 +80,7 @@ position = Vector2( 1230.72, 337.714 )
 
 [node name="TrackPlayer" parent="." instance=ExtResource( 10 )]
 cue_bis_after_loop = true
+
+[node name="UI" parent="." instance=ExtResource( 12 )]
+[connection signal="bis_cued" from="TrackPlayer" to="UI" method="play_solo"]
 [connection signal="bis_ended" from="TrackPlayer" to="." method="_on_TrackPlayer_bis_ended"]

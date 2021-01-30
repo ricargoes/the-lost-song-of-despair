@@ -1,0 +1,32 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://scenes/ui/UI.gd" type="Script" id=2]
+
+[node name="UI" type="CanvasLayer"]
+script = ExtResource( 2 )
+
+[node name="ControlRoot" type="Control" parent="."]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -970.0
+margin_bottom = 540.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CinematicScreen" type="TextureRect" parent="ControlRoot"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -200.0
+margin_bottom = 200.0
+rect_min_size = Vector2( 200, 200 )
+expand = true
+stretch_mode = 5
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="CasseteTimer" type="Timer" parent="ControlRoot"]
+wait_time = 2.5
+one_shot = true
+[connection signal="timeout" from="ControlRoot/CasseteTimer" to="." method="_on_CasseteTimer_timeout"]
