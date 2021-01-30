@@ -2,6 +2,7 @@ extends KinematicBody2D
 
 const cos_45 = 1/sqrt(2)
 export var shoot_cooldown = 0.2
+export var standing_shoot_speed_multiplier = 1.5
 
 func _ready():
 	set_physics_process(true)
@@ -63,7 +64,7 @@ func shoot(dir, standing):
 	bullet.rotation = dir.angle()
 	get_parent().add_child(bullet)
 	if standing:
-		$ShootCooldown.start(shoot_cooldown/2)
+		$ShootCooldown.start(shoot_cooldown/standing_shoot_speed_multiplier)
 	else:
 		$ShootCooldown.start(shoot_cooldown)
 
