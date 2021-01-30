@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/BateriaBajo.mp3.ogg-c50ec9c3142d0f4b1755828349a1cb57.oggstr"
+
+[deps]
+
+source_file="res://resources/music/0/BateriaBajo.mp3.ogg"
+dest_files=[ "res://.import/BateriaBajo.mp3.ogg-c50ec9c3142d0f4b1755828349a1cb57.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
