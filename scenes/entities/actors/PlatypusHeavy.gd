@@ -26,6 +26,9 @@ func _physics_process(delta):
 	
 	if Input.is_action_pressed("shoot") and $ShootCooldown.is_stopped():
 		shoot(look_dir, move_dir == Vector2.ZERO)
+	
+	if Global.difficulty >= 4:
+		pyrotechnics()
 
 
 func get_move_direction():
@@ -46,7 +49,6 @@ func get_look_direction():
 	
 
 func shoot(dir, standing):
-	
 	var bullet
 	if Global.difficulty < 1:
 		bullet = ResourcesManager.bullets_class["wind"].instance()
@@ -65,9 +67,26 @@ func shoot(dir, standing):
 	else:
 		$ShootCooldown.start(shoot_cooldown)
 
+
+func pyrotechnics():
+	if $Pyrotechnics/Cooldown.is_stopped():
+		var victims = $Pyrotechnics.get_overlapping_bodies()
+		for victim in victims:
+			if victim.is_in_group("enemies"):
+				victim.hit(2)
+		$Pyrotechnics.show()
+		$Pyrotechnics/AnimatedSprite.play()
+		$Pyrotechnics/Cooldown.start()
+
+
+func stop_pyrotechnics():
+	$Pyrotechnics.hide()
+	$Pyrotechnics/AnimatedSprite.stop()
+
+
 func hit():
 	die()
 
 func die():
 	Global.game_over(false)
-	
+
