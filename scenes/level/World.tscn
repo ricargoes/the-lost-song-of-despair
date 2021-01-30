@@ -61,4 +61,16 @@ position = Vector2( 680.768, 656.741 )
 [node name="Cassette" parent="Things" instance=ExtResource( 11 )]
 position = Vector2( 1250.74, 419.139 )
 
+[node name="Cassette2" parent="Things" instance=ExtResource( 11 )]
+position = Vector2( 1250.74, 419.139 )
+
+[node name="Cassette3" parent="Things" instance=ExtResource( 11 )]
+position = Vector2( 1230.72, 229.592 )
+
+[node name="Cassette4" parent="Things" instance=ExtResource( 11 )]
+position = Vector2( 1230.72, 337.714 )
+
+[node name="Cassette5" parent="Things" instance=ExtResource( 11 )]
+position = Vector2( 1226.72, 512.578 )
+
 [node name="TrackPlayer" parent="." instance=ExtResource( 10 )]
