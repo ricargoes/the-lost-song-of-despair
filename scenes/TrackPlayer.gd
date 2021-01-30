@@ -6,7 +6,6 @@ export var song_n = 0
 func _ready():
 	Global.tracklist_node = self
 	prepare_tracks()
-	step_up()
 
 func prepare_tracks():
 	var tracks = $Tracks.get_children()
