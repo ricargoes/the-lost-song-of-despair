@@ -1,8 +1,8 @@
 extends Area2D
 
 export var enabled = true
-export var spawn_cooldown = 2
-export var spawn_amount = 1
+export var spawn_cooldown = 2.0
+export var spawn_amount = 1.0
 export var spawn_amount_per_level = 0.25
 export var spawn_type = ""
 
