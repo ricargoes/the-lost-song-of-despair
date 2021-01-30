@@ -1,4 +1,4 @@
-extends YSort
+extends Node2D
 
 func _ready():
 	Global.enemies_world_node = $Enemies

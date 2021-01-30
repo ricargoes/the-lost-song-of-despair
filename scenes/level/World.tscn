@@ -10,7 +10,7 @@
 [ext_resource path="res://scenes/entities/hazards/SpiderSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/entities/hazards/ZombieSpawner.tscn" type="PackedScene" id=9]
 
-[node name="World" type="YSort"]
+[node name="World" type="Node2D"]
 script = ExtResource( 3 )
 
 [node name="Navigation2D" type="Navigation2D" parent="."]
