@@ -77,9 +77,6 @@ position = Vector2( 1230.72, 229.592 )
 [node name="Cassette4" parent="Things" instance=ExtResource( 11 )]
 position = Vector2( 1230.72, 337.714 )
 
-[node name="Cassette5" parent="Things" instance=ExtResource( 11 )]
-position = Vector2( 1226.72, 512.578 )
-
 [node name="TrackPlayer" parent="." instance=ExtResource( 10 )]
 cue_bis_after_loop = true
 [connection signal="bis_ended" from="TrackPlayer" to="." method="_on_TrackPlayer_bis_ended"]
