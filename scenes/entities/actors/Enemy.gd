@@ -28,7 +28,7 @@ func _physics_process(delta):
 		elif move_dir.y < -cos_45:
 			$AnimatedSprite.play("up")
 		
-		var collision = move_and_collide(move_dir*Global.char_max_speed*relative_speed)
+		var collision = Global.ground_slide_or_collide(self, move_dir*Global.char_max_speed*relative_speed)
 		if collision:
 			if collision.collider.is_in_group("platypus"):
 				collision.collider.hit()
