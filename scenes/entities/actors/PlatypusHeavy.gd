@@ -50,4 +50,10 @@ func shoot(dir):
 	bullet.rotation = dir.angle()
 	get_parent().add_child(bullet)
 	$ShootCooldown.start()
+
+func hit():
+	die()
+
+func die():
+	Global.game_over()
 	
