@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scenes/entities/actors/Zombie.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/entities/actors/Skeleton.tscn" type="PackedScene" id=2]
@@ -9,6 +9,8 @@
 [ext_resource path="res://scenes/entities/hazards/SkeletonSpawner.tscn" type="PackedScene" id=7]
 [ext_resource path="res://scenes/entities/hazards/SpiderSpawner.tscn" type="PackedScene" id=8]
 [ext_resource path="res://scenes/entities/hazards/ZombieSpawner.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/TrackPlayer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/entities/hazards/Cassette.tscn" type="PackedScene" id=11]
 
 [node name="World" type="Node2D"]
 script = ExtResource( 3 )
@@ -45,13 +47,18 @@ position = Vector2( 426.925, 304.437 )
 position = Vector2( 956.122, 315.14 )
 relative_speed = 0.1
 
-[node name="Spawners" type="YSort" parent="."]
+[node name="Things" type="YSort" parent="."]
 
-[node name="SkeletonSpawner" parent="Spawners" instance=ExtResource( 7 )]
+[node name="SkeletonSpawner" parent="Things" instance=ExtResource( 7 )]
 position = Vector2( 221.583, 296.334 )
 
-[node name="SpiderSpawner" parent="Spawners" instance=ExtResource( 8 )]
+[node name="SpiderSpawner" parent="Things" instance=ExtResource( 8 )]
 position = Vector2( 734.162, 178.869 )
 
-[node name="ZombieSpawner" parent="Spawners" instance=ExtResource( 9 )]
+[node name="ZombieSpawner" parent="Things" instance=ExtResource( 9 )]
 position = Vector2( 680.768, 656.741 )
+
+[node name="Cassette" parent="Things" instance=ExtResource( 11 )]
+position = Vector2( 1250.74, 419.139 )
+
+[node name="TrackPlayer" parent="." instance=ExtResource( 10 )]

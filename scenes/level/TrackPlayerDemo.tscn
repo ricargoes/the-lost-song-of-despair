@@ -1,11 +1,6 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=3 format=2]
 
-[ext_resource path="res://resources/music/0/bateriaBajoRitmicas.mp3.ogg" type="AudioStream" id=1]
-[ext_resource path="res://resources/music/0/bateria.mp3.ogg" type="AudioStream" id=2]
-[ext_resource path="res://resources/music/0/BateriaBajo.mp3.ogg" type="AudioStream" id=3]
 [ext_resource path="res://scenes/TrackPlayer.tscn" type="PackedScene" id=4]
-[ext_resource path="res://resources/music/0/bateriaBajoRitmicasTeclados.mp3.ogg" type="AudioStream" id=5]
-[ext_resource path="res://resources/music/0/bateriaBajoRitmicasTecladosSolistas.mp3.ogg" type="AudioStream" id=6]
 [ext_resource path="res://scenes/level/TrackPlayerDemo.gd" type="Script" id=7]
 
 [node name="TrackPlayerDemo" type="Control"]
@@ -36,21 +31,6 @@ margin_bottom = 30.0
 text = "Step up!"
 
 [node name="TrackPlayer" parent="." instance=ExtResource( 4 )]
-
-[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="TrackPlayer/Tracks" index="0"]
-stream = ExtResource( 2 )
-
-[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="TrackPlayer/Tracks" index="1"]
-stream = ExtResource( 3 )
-
-[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="TrackPlayer/Tracks" index="2"]
-stream = ExtResource( 1 )
-
-[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="TrackPlayer/Tracks" index="3"]
-stream = ExtResource( 5 )
-
-[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="TrackPlayer/Tracks" index="4"]
-stream = ExtResource( 6 )
 [connection signal="button_up" from="CenterContainer/StepUpButton" to="." method="_on_StepUpButton_button_up"]
 
 [editable path="TrackPlayer"]

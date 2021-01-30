@@ -45,6 +45,7 @@ func get_look_direction():
 	
 
 func shoot(dir):
+	print(get_tree().get_nodes_in_group("enemies").size())
 	var bullet = ResourcesManager.bullets_class["wind"].instance()
 	bullet.position = position + dir*10
 	bullet.rotation = dir.angle()

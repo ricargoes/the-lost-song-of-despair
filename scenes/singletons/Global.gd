@@ -7,6 +7,7 @@ var have_won = false
 
 var enemies_world_node = null
 var nav_node = null
+var tracklist_node = null
 
 func _ready():
 	set_process_input(true)
