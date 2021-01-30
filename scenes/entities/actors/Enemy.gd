@@ -4,9 +4,13 @@ const cos_45 = 1/sqrt(2)
 
 export var hits = 2
 export var relative_speed = 0.75
+export var hits_per_level = 0.5
+export var speed_increment_per_level = 0.05
 
 func _ready():
 	set_physics_process(true)
+	hits += Global.difficulty*hits_per_level
+	relative_speed+= Global.difficulty*speed_increment_per_level
 	$AnimatedSprite.play("down")
 	
 func _physics_process(delta):

@@ -4,6 +4,8 @@ const char_max_speed = 5
 const ground_collision_bit = 4
 const ground_collision_grease_factor = 2.0
 
+var difficulty = 0
+
 var playing_story = true
 var have_won = false
 

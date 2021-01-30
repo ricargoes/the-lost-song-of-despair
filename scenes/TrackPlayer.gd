@@ -21,3 +21,4 @@ func step_up():
 		tracks[current_track].set_volume_db(-80.0)
 		current_track += 1
 		tracks[current_track].set_volume_db(-0.0)
+		Global.difficulty = current_track
