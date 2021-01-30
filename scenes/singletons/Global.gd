@@ -5,6 +5,7 @@ const ground_collision_bit = 4
 const ground_collision_grease_factor = 1.5
 
 var difficulty = 0
+var max_enemies = 50
 
 var playing_story = true
 var have_won = false

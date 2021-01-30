@@ -21,10 +21,10 @@ func disable(_activator=null):
 
 
 func spawn():
-	if Global.enemies_world_node == null:
+	$SpawnCooldown.start(spawn_cooldown)
+	if Global.enemies_world_node == null or get_tree().get_nodes_in_group("enemies") > Global.max_enemies:
 		return
 	for i in range(spawn_amount):
 		var enemy = ResourcesManager.enemies_class[spawn_type].instance()
 		Global.enemies_world_node.add_child(enemy)
 		enemy.position = position
-	$SpawnCooldown.start(spawn_cooldown)
