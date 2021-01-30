@@ -22,6 +22,7 @@ config/icon="res://resources/sprites/icon.png"
 [autoload]
 
 Global="*res://scenes/singletons/Global.gd"
+ResourcesManager="*res://scenes/singletons/ResourcesManager.gd"
 
 [display]
 

@@ -45,7 +45,7 @@ func get_look_direction():
 	
 
 func shoot(dir):
-	var bullet = preload("res://scenes/entities/bullets/WindBullet.tscn").instance()
+	var bullet = ResourcesManager.bullets_class["wind"].instance()
 	bullet.position = position + dir*10
 	bullet.rotation = dir.angle()
 	get_parent().add_child(bullet)
@@ -55,5 +55,5 @@ func hit():
 	die()
 
 func die():
-	Global.game_over()
+	Global.game_over(false)
 	

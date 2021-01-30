@@ -11,8 +11,11 @@ func _ready():
 	
 func _physics_process(delta):
 	var platypus = get_tree().get_nodes_in_group("platypus")[0]
-
-	var points = get_tree().get_nodes_in_group("nav")[0].get_simple_path(position, platypus.position, true)
+	
+	if Global.nav_node == null:
+		return
+		
+	var points = Global.nav_node.get_simple_path(position, platypus.position, true)
 	
 	if points.size() > 0:
 		var move_dir = (points[1] - position).normalized()
