@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=24 format=2]
 
 [ext_resource path="res://resources/sprites/enemies/zombie2.png" type="Texture" id=1]
 [ext_resource path="res://resources/sprites/enemies/zombie1.png" type="Texture" id=2]
@@ -6,12 +6,42 @@
 [ext_resource path="res://resources/sprites/enemies/zombie3.png" type="Texture" id=4]
 [ext_resource path="res://resources/sprites/enemies/zombie5.png" type="Texture" id=5]
 [ext_resource path="res://resources/sprites/enemies/zombie4.png" type="Texture" id=6]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_left4.png" type="Texture" id=7]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_right5.png" type="Texture" id=8]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_back4.png" type="Texture" id=9]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_back3.png" type="Texture" id=10]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_left1.png" type="Texture" id=11]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_left3.png" type="Texture" id=12]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_back5.png" type="Texture" id=13]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_left2.png" type="Texture" id=14]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_back2.png" type="Texture" id=15]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_right2.png" type="Texture" id=16]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_left5.png" type="Texture" id=17]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_back1.png" type="Texture" id=18]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_right1.png" type="Texture" id=19]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_right3.png" type="Texture" id=20]
+[ext_resource path="res://resources/sprites/enemies/Zombie_running_right4.png" type="Texture" id=21]
 
 [sub_resource type="SpriteFrames" id=1]
 animations = [ {
+"frames": [ ExtResource( 11 ), ExtResource( 14 ), ExtResource( 12 ), ExtResource( 7 ), ExtResource( 17 ) ],
+"loop": true,
+"name": "left",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 19 ), ExtResource( 16 ), ExtResource( 20 ), ExtResource( 21 ), ExtResource( 8 ) ],
+"loop": true,
+"name": "right",
+"speed": 10.0
+}, {
+"frames": [ ExtResource( 18 ), ExtResource( 15 ), ExtResource( 10 ), ExtResource( 9 ), ExtResource( 13 ) ],
+"loop": true,
+"name": "up",
+"speed": 10.0
+}, {
 "frames": [ ExtResource( 2 ), ExtResource( 1 ), ExtResource( 4 ), ExtResource( 6 ), ExtResource( 5 ) ],
 "loop": true,
-"name": "default",
+"name": "down",
 "speed": 7.0
 } ]
 
@@ -23,6 +53,7 @@ height = 7.69287
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
+animation = "right"
 
 [node name="CollisionShape2D" parent="." index="1"]
 position = Vector2( 0, 7 )
