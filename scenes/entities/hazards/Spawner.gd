@@ -22,7 +22,7 @@ func disable(_activator=null):
 
 func spawn():
 	$SpawnCooldown.start(spawn_cooldown)
-	if Global.enemies_world_node == null or get_tree().get_nodes_in_group("enemies") > Global.max_enemies:
+	if Global.enemies_world_node == null or get_tree().get_nodes_in_group("enemies").size() > Global.max_enemies:
 		return
 	for i in range(spawn_amount):
 		var enemy = ResourcesManager.enemies_class[spawn_type].instance()

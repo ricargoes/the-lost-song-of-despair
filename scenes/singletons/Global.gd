@@ -1,11 +1,12 @@
 extends Node
 
-const char_max_speed = 5
 const ground_collision_bit = 4
 const ground_collision_grease_factor = 1.5
 
 var difficulty = 0
+
 var max_enemies = 50
+var char_max_speed = 5
 
 var playing_story = true
 var have_won = false

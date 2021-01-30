@@ -1,6 +1,7 @@
 extends KinematicBody2D
 
 const cos_45 = 1/sqrt(2)
+export var shoot_cooldown = 0.2
 
 func _ready():
 	set_physics_process(true)
@@ -24,7 +25,7 @@ func _physics_process(delta):
 		
 	
 	if Input.is_action_pressed("shoot") and $ShootCooldown.is_stopped():
-		shoot(look_dir)
+		shoot(look_dir, move_dir == Vector2.ZERO)
 
 
 func get_move_direction():
@@ -44,13 +45,16 @@ func get_look_direction():
 	return get_global_transform().get_origin().direction_to(get_global_mouse_position()).normalized()
 	
 
-func shoot(dir):
+func shoot(dir, standing):
 	print(get_tree().get_nodes_in_group("enemies").size())
 	var bullet = ResourcesManager.bullets_class["wind"].instance()
 	bullet.position = position + dir*10
 	bullet.rotation = dir.angle()
 	get_parent().add_child(bullet)
-	$ShootCooldown.start()
+	if standing:
+		$ShootCooldown.start(shoot_cooldown/2)
+	else:
+		$ShootCooldown.start(shoot_cooldown)
 
 func hit():
 	die()
