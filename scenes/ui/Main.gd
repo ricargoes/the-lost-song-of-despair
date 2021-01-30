@@ -2,12 +2,15 @@ extends Control
 
 
 func _ready():
+	Global.have_won = false
 	$Main/Story.grab_focus()
 
 func _on_Endless_pressed():
+	Global.playing_story = false
 	var _unused = get_tree().change_scene("res://scenes/World.tscn")
 
 func _on_Story_pressed():
+	Global.playing_story = true
 	var _unused = get_tree().change_scene("res://scenes/World.tscn")
 
 func _on_Quit_pressed():
