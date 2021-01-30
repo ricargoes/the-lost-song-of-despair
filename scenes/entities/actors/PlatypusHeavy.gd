@@ -74,7 +74,7 @@ func pyrotechnics():
 		var victims = $Pyrotechnics.get_overlapping_bodies()
 		for victim in victims:
 			if victim.is_in_group("enemies"):
-				victim.hit(2)
+				victim.hit(5)
 		$Pyrotechnics.show()
 		$Pyrotechnics/AnimatedSprite.play()
 		$Pyrotechnics/Cooldown.start()
