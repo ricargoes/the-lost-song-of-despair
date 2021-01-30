@@ -9,3 +9,7 @@ func _ready():
 	Global.enemies_world_node = find_node("Enemies")
 	Global.nav_node = find_node("Navigation2D")
 	$TrackPlayer.step_up()
+
+
+func _on_TrackPlayer_bis_ended():
+	Global.game_over(true)

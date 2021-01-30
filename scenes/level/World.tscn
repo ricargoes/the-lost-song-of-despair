@@ -69,7 +69,7 @@ position = Vector2( 680.768, 656.741 )
 position = Vector2( 1250.74, 419.139 )
 
 [node name="Cassette2" parent="Things" instance=ExtResource( 11 )]
-position = Vector2( 1250.74, 419.139 )
+position = Vector2( 1233.77, 156.095 )
 
 [node name="Cassette3" parent="Things" instance=ExtResource( 11 )]
 position = Vector2( 1230.72, 229.592 )
@@ -81,3 +81,5 @@ position = Vector2( 1230.72, 337.714 )
 position = Vector2( 1226.72, 512.578 )
 
 [node name="TrackPlayer" parent="." instance=ExtResource( 10 )]
+cue_bis_after_loop = true
+[connection signal="bis_ended" from="TrackPlayer" to="." method="_on_TrackPlayer_bis_ended"]
