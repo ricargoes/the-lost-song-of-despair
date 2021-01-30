@@ -8,6 +8,7 @@ func _ready():
 	Global.char_max_speed = char_max_speed
 	Global.enemies_world_node = find_node("Enemies")
 	Global.nav_node = find_node("Navigation2D")
+	Global.difficulty = 0
 	$TrackPlayer.step_up()
 
 

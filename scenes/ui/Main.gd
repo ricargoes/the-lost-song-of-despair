@@ -7,7 +7,7 @@ func _ready():
 
 func _on_Endless_pressed():
 	Global.playing_story = false
-	var _unused = get_tree().change_scene("res://scenes/level/World.tscn")
+	var _unused = get_tree().change_scene("res://scenes/level/Endless.tscn")
 
 func _on_Story_pressed():
 	Global.playing_story = true

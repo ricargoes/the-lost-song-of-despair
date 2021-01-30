@@ -12,3 +12,5 @@ var bullets_class = {
 	"lightning": preload("res://scenes/entities/bullets/LightningAxeBullet.tscn"),
 	"explosive": preload("res://scenes/entities/bullets/ExplosiveAxeBullet.tscn")
 }
+
+var cassete_class = preload("res://scenes/entities/hazards/Cassette.tscn")

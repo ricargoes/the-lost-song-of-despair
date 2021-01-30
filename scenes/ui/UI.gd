@@ -14,6 +14,10 @@ func play_cassete():
 
 
 func _on_CasseteTimer_timeout():
+	hide_cinematic()
+
+
+func hide_cinematic():
 	$ControlRoot/CinematicScreen.hide()
 	$ControlRoot/CinematicScreen.texture = null
 
@@ -22,4 +26,3 @@ func play_solo():
 	$ControlRoot/CasseteTimer.stop()
 	$ControlRoot/CinematicScreen.texture = solo_cinem
 	$ControlRoot/CinematicScreen.show()
-	

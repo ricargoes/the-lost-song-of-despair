@@ -10,7 +10,7 @@ func _ready():
 		$VBoxContainer/HBoxContainer2/Retry.hide()
 	else:
 		title_label.text = "Game Over."
-		text_edit.text = "You have failed."
+		text_edit.text = "You have listened to "+str(Global.songs_listened)+" and collected "+str(Global.difficulty)+" tracks of the next one. May the power of metal go with you next time."
 	
 	Global.have_won = false
 
@@ -18,7 +18,7 @@ func _on_Retry_pressed():
 	if Global.playing_story:
 		var _unused = get_tree().change_scene("res://scenes/level/World.tscn")
 	else:
-		var _unused = get_tree().change_scene("res://scenes/level/World.tscn")
+		var _unused = get_tree().change_scene("res://scenes/level/Endless.tscn")
 
 
 func _on_MainMenu_pressed():
