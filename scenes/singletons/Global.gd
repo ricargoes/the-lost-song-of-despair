@@ -1,6 +1,6 @@
 extends Node
 
-const char_max_speed = 1
+const char_max_speed = 5
 const ground_collision_bit = 4
 const ground_collision_grease_factor = 2.0
 
