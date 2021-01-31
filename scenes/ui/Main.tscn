@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/ui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/Main.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://resources/sprites/ui/9patch.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/Title.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/ui/Menu.gd" type="Script" id=7]
-[ext_resource path="res://scenes/ui/Narration.tscn" type="PackedScene" id=8]
 [ext_resource path="res://resources/sprites/platypusheavy/Duke_running_FW5.Png" type="Texture" id=9]
 [ext_resource path="res://resources/sprites/platypusheavy/Duke_running_FW4.Png" type="Texture" id=10]
 [ext_resource path="res://resources/sprites/platypusheavy/Duke_running_FW2.Png" type="Texture" id=11]
@@ -181,9 +180,6 @@ size_flags_horizontal = 4
 text = "Quit"
 
 [node name="Title" parent="." instance=ExtResource( 6 )]
-visible = false
-
-[node name="Narration" parent="." instance=ExtResource( 8 )]
 visible = false
 [connection signal="mouse_entered" from="Main/Main/Story" to="Main" method="_on_Story_mouse_entered"]
 [connection signal="mouse_exited" from="Main/Main/Story" to="Main" method="default_explanation"]

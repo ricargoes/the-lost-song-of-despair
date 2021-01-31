@@ -18,6 +18,7 @@ var tracklist_node = null
 var ui_node = null
 
 var show_title = true
+var narration_shown = false
 
 func game_over(winning):
 	have_won = winning
