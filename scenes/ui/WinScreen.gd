@@ -25,7 +25,7 @@ func _input(event):
 
 func _on_Retry_pressed():
 	if Global.playing_story:
-		var _unused = get_tree().change_scene("res://scenes/level/World.tscn")
+		var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
 	else:
 		var _unused = get_tree().change_scene("res://scenes/level/Endless.tscn")
 
