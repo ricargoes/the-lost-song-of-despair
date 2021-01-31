@@ -14,11 +14,13 @@ func _ready():
 	$AnimatedSprite.play("down")
 	
 func _physics_process(delta):
-	var platypus = get_tree().get_nodes_in_group("platypus")[0]
+	if $DeadAnim.is_playing():
+		return
 	
 	if Global.nav_node == null:
 		return
-		
+	
+	var platypus = get_tree().get_nodes_in_group("platypus")[0]
 	var points = Global.nav_node.get_simple_path(position, platypus.position, false)
 	
 	if points.size() > 0:
@@ -45,4 +47,13 @@ func hit(damage=1):
 
 
 func die():
+	collision_layer = 0
+	collision_mask = 0
+	$AnimatedSprite.stop()
+	$AnimatedSprite.hide()
+	$DeadAnim.show()
+	$DeadAnim.play()
+
+
+func _on_DeadAnim_animation_finished():
 	queue_free()
