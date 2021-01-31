@@ -3,6 +3,7 @@ extends Control
 
 func _ready():
 	Global.have_won = false
+	Global.songs_listened = 0
 
 func _on_Endless_pressed():
 	Global.playing_story = false
