@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/background_table.png-477f528023ec3583923e80763dfab897.stex"
+path="res://.import/9patchr.png-c2edd0328c74f18a1f525c6e70d8856e.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://resources/sprites/ui/background_table.png"
-dest_files=[ "res://.import/background_table.png-477f528023ec3583923e80763dfab897.stex" ]
+source_file="res://resources/sprites/ui/9patchr.png"
+dest_files=[ "res://.import/9patchr.png-c2edd0328c74f18a1f525c6e70d8856e.stex" ]
 
 [params]
 
