@@ -10,7 +10,9 @@ func _on_Endless_pressed():
 
 func _on_Story_pressed():
 	Global.playing_story = true
-	get_parent().get_node("Narration").show()
+	var narration = get_parent().get_node("Narration")
+	narration.show()
+	narration.get_node("AnimationPlayer").play()
 
 func _on_Quit_pressed():
 	get_tree().quit()

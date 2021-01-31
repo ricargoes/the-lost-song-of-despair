@@ -175,7 +175,6 @@ margin_right = 500.0
 margin_bottom = 350.0
 
 [node name="page1" type="TextEdit" parent="VBoxContainer/MarginContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 500.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 500, 350 )
@@ -243,6 +242,7 @@ selecting_enabled = false
 wrap_enabled = true
 
 [node name="page5" type="TextEdit" parent="VBoxContainer/MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 500.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 500, 350 )
@@ -274,7 +274,6 @@ selecting_enabled = false
 wrap_enabled = true
 
 [node name="page7" type="TextEdit" parent="VBoxContainer/MarginContainer"]
-modulate = Color( 1, 1, 1, 0 )
 margin_right = 500.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 500, 350 )
@@ -310,6 +309,7 @@ __meta__ = {
 }
 
 [node name="TextureRect" type="TextureRect" parent="."]
+modulate = Color( 1, 1, 1, 0 )
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
@@ -322,7 +322,6 @@ __meta__ = {
 }
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-autoplay = "Scroll"
 anims/Scroll = SubResource( 3 )
 
 [node name="Narrator" type="AudioStreamPlayer" parent="."]
