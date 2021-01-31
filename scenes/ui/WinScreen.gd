@@ -13,6 +13,13 @@ func _ready():
 		text_edit.text = "You have listened to "+str(Global.songs_listened)+" and collected "+str(Global.difficulty)+" tracks of the next one. May the power of metal go with you next time."
 	
 	Global.have_won = false
+	set_process_input(true)
+
+
+func _input(event):
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
+
 
 func _on_Retry_pressed():
 	if Global.playing_story:

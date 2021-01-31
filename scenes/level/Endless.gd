@@ -1,17 +1,18 @@
 extends "res://scenes/level/World.gd"
 
 var spawner_groups = ["a", "b", "c"]
-var current_group = "a"
 
 func _ready():
 	spawn_cassetes()
-	activate_spawner_group()
+	rotate_spawners()
 	Global.songs_listened = 0
 	set_process_input(true)
+
 
 func _input(event):
 	if event.is_action_pressed("quit"):
 		get_tree().quit()
+
 
 func _on_TrackPlayer_bis_ended():
 	reset_song()
@@ -22,7 +23,8 @@ func _on_TrackPlayer_bis_ended():
 
 func reset_song():
 	Global.songs_listened += 1
-	$TrackPlayer.song_n = ($TrackPlayer.song_n + 1) % 1
+	Global.difficulty = 0
+	$TrackPlayer.song_n = ($TrackPlayer.song_n + 1) % 2
 	$TrackPlayer.current_track = -1
 	$TrackPlayer.prepare_tracks()
 	$TrackPlayer.step_up()
@@ -36,13 +38,11 @@ func spawn_cassetes():
 		spawner.get_parent().add_child(cassete)
 
 func rotate_spawners():
-	var i = spawner_groups.find(current_group)
-	current_group = spawner_groups[(i+1) % spawner_groups.size()]
-	activate_spawner_group()
-
-func activate_spawner_group():
+	var current_group_index = Global.songs_listened % spawner_groups.size()
+	var n_spawners = min(floor(Global.songs_listened / spawner_groups.size()) + 1, spawner_groups.size())
 	for group in spawner_groups:
-		if group == current_group:
-			get_tree().call_group(group, "enable")
-		else:
-			get_tree().call_group(group, "disable")
+		get_tree().call_group(group, "disable")
+	
+	for i in range(n_spawners):
+		var group = spawner_groups[(current_group_index + i) % spawner_groups.size()]
+		get_tree().call_group(group, "enable")

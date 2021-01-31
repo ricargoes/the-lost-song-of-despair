@@ -8,8 +8,11 @@ func _ready():
 	set_process_input(true)
 
 func _input(event):
-	if event.is_action_pressed("quit") or event.is_action_pressed("shoot"):
+	if event.is_action_pressed("quit"):
 		if $Title.visible:
 			$Title.visible = false
 		else:
 			get_tree().quit()
+	
+	if event.is_action_pressed("shoot"):
+		$Title.visible = false

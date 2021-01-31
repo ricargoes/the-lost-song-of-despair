@@ -19,7 +19,7 @@ func _physics_process(delta):
 	if Global.nav_node == null:
 		return
 		
-	var points = Global.nav_node.get_simple_path(position, platypus.position, true)
+	var points = Global.nav_node.get_simple_path(position, platypus.position, false)
 	
 	if points.size() > 0:
 		var move_dir = (points[1] - position).normalized()
