@@ -17,6 +17,8 @@ var nav_node = null
 var tracklist_node = null
 var ui_node = null
 
+var show_title = true
+
 func _ready():
 	set_process_input(true)
 

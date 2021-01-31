@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=9 format=2]
 
 [ext_resource path="res://scenes/ui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/Main.gd" type="Script" id=2]
@@ -6,6 +6,7 @@
 [ext_resource path="res://resources/sprites/ui/background_table.png" type="Texture" id=4]
 [ext_resource path="res://resources/sprites/ui/9patch.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/Title.tscn" type="PackedScene" id=6]
+[ext_resource path="res://scenes/ui/Menu.gd" type="Script" id=7]
 
 [sub_resource type="StyleBoxLine" id=1]
 grow_begin = -3.0
@@ -16,6 +17,7 @@ vertical = true
 [node name="Menu" type="Control"]
 anchor_right = 1.0
 anchor_bottom = 1.0
+script = ExtResource( 7 )
 __meta__ = {
 "_edit_use_anchors_": false
 }
@@ -137,7 +139,8 @@ rect_min_size = Vector2( 150, 20 )
 size_flags_horizontal = 4
 text = "Quit"
 
-[node name="Tittle" parent="." instance=ExtResource( 6 )]
+[node name="Title" parent="." instance=ExtResource( 6 )]
+visible = false
 [connection signal="mouse_entered" from="Main/Main/Story" to="Main" method="_on_Story_mouse_entered"]
 [connection signal="mouse_exited" from="Main/Main/Story" to="Main" method="default_explanation"]
 [connection signal="pressed" from="Main/Main/Story" to="Main" method="_on_Story_pressed"]
@@ -147,5 +150,3 @@ text = "Quit"
 [connection signal="mouse_entered" from="Main/Main/Quit" to="Main" method="_on_Quit_mouse_entered"]
 [connection signal="mouse_exited" from="Main/Main/Quit" to="Main" method="default_explanation"]
 [connection signal="pressed" from="Main/Main/Quit" to="Main" method="_on_Quit_pressed"]
-
-[editable path="Tittle"]
