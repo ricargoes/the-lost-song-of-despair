@@ -16,7 +16,7 @@ func _on_Quit_pressed():
 	get_tree().quit()
 
 func set_explanation(text):
-	$Main/HSeparator/Margin/HBoxContainer/TextEdit.text = text
+	$Main/TextBox/MarginContainer/HBoxContainer/CenterContainer/TextEdit.text = text
 
 func default_explanation():
 	set_explanation("Pick your poison!")
