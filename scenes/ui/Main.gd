@@ -13,8 +13,7 @@ func _on_Story_pressed():
 	Global.playing_story = true
 	if not Global.narration_shown:
 		Global.narration_shown = true
-		#var _unused = get_tree().change_scene("res://scenes/ui/Narration.tscn")
-		var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
+		var _unused = get_tree().change_scene("res://scenes/ui/Narration.tscn")
 	else:
 		var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
 
