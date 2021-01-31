@@ -2,7 +2,7 @@
 
 [ext_resource path="res://scenes/ui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/Main.gd" type="Script" id=2]
-[ext_resource path="res://resources/sprites/platypusheavy/Dukestanding1.png" type="Texture" id=3]
+[ext_resource path="res://resources/sprites/ui/titulo.png" type="Texture" id=3]
 [ext_resource path="res://resources/sprites/ui/background_table.png" type="Texture" id=4]
 [ext_resource path="res://resources/sprites/ui/9patch.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/Title.tscn" type="PackedScene" id=6]
