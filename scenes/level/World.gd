@@ -17,4 +17,11 @@ func _input(event):
 		get_tree().quit()
 
 func _on_TrackPlayer_bis_ended():
-	Global.game_over(true)
+	Global.songs_listened += 1
+	end_level()
+
+func end_level():
+	if Global.songs_listened > 1:
+		Global.game_over(true)
+	else:
+		var _unused = get_tree().change_scene("res://scenes/level/Level2.tscn")

@@ -22,135 +22,154 @@ tile_data = PoolIntArray( -1310724, 4, 0, -1245188, 4, 0, -1179652, 4, 0, -12451
 [node name="PlatypusHeavy" parent="." instance=ExtResource( 9 )]
 position = Vector2( 362.217, 102.095 )
 
-[node name="Enemies" type="YSort" parent="."]
+[node name="YSort" type="YSort" parent="."]
 
-[node name="Spawners" type="YSort" parent="."]
+[node name="Casettes" type="YSort" parent="YSort"]
 __meta__ = {
 "_edit_lock_": true
 }
 
-[node name="SkeletonSpawner" parent="Spawners" groups=[
+[node name="Cassette" parent="YSort/Casettes" instance=ExtResource( 7 )]
+position = Vector2( -1531.53, -719.816 )
+
+[node name="Cassette2" parent="YSort/Casettes" instance=ExtResource( 7 )]
+position = Vector2( 549.241, -758.778 )
+
+[node name="Cassette3" parent="YSort/Casettes" instance=ExtResource( 7 )]
+position = Vector2( 2790.65, -806.4 )
+
+[node name="Cassette4" parent="YSort/Casettes" instance=ExtResource( 7 )]
+position = Vector2( 2447.77, 952.44 )
+
+[node name="Enemies" type="YSort" parent="YSort"]
+
+[node name="Spawners" type="YSort" parent="YSort"]
+__meta__ = {
+"_edit_lock_": true
+}
+
+[node name="SkeletonSpawner" parent="YSort/Spawners" groups=[
 "1",
 ] instance=ExtResource( 8 )]
 position = Vector2( -604.043, -746.775 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SkeletonSpawner2" parent="Spawners" groups=[
+[node name="SkeletonSpawner2" parent="YSort/Spawners" groups=[
 "1",
 ] instance=ExtResource( 8 )]
 position = Vector2( -1528.59, 22.0351 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner" parent="Spawners" instance=ExtResource( 3 )]
+[node name="ZombieSpawner" parent="YSort/Spawners" instance=ExtResource( 3 )]
 position = Vector2( -941.866, 239.002 )
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner2" parent="Spawners" instance=ExtResource( 3 )]
+[node name="ZombieSpawner2" parent="YSort/Spawners" instance=ExtResource( 3 )]
 position = Vector2( -227.688, -702.864 )
 spawn_cooldown = 10.0
 
-[node name="SpiderSpawner" parent="Spawners" groups=[
+[node name="SpiderSpawner" parent="YSort/Spawners" groups=[
 "2",
 ] instance=ExtResource( 4 )]
 position = Vector2( 942.199, -642.724 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SpiderSpawner2" parent="Spawners" groups=[
+[node name="SpiderSpawner2" parent="YSort/Spawners" groups=[
 "2",
 ] instance=ExtResource( 4 )]
 position = Vector2( 157.593, -655.466 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner3" parent="Spawners" groups=[
+[node name="ZombieSpawner3" parent="YSort/Spawners" groups=[
 "3",
 ] instance=ExtResource( 3 )]
 position = Vector2( 1860.9, -197.777 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner4" parent="Spawners" groups=[
+[node name="ZombieSpawner4" parent="YSort/Spawners" groups=[
 "3",
 ] instance=ExtResource( 3 )]
 position = Vector2( 2783.86, -470.468 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SkeletonSpawner3" parent="Spawners" instance=ExtResource( 8 )]
+[node name="SkeletonSpawner3" parent="YSort/Spawners" instance=ExtResource( 8 )]
 position = Vector2( 743.452, -218.431 )
 spawn_cooldown = 10.0
 
-[node name="SpiderSpawner3" parent="Spawners" groups=[
+[node name="SpiderSpawner3" parent="YSort/Spawners" groups=[
 "3",
 ] instance=ExtResource( 4 )]
 position = Vector2( 1881.87, -824.069 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SpiderSpawner10" parent="Spawners" instance=ExtResource( 4 )]
+[node name="SpiderSpawner10" parent="YSort/Spawners" instance=ExtResource( 4 )]
 position = Vector2( 1172.08, 282.152 )
 spawn_cooldown = 10.0
 
-[node name="SpiderSpawner4" parent="Spawners" groups=[
+[node name="SpiderSpawner4" parent="YSort/Spawners" groups=[
 "3",
 ] instance=ExtResource( 4 )]
 position = Vector2( 2696.95, -83.9052 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner5" parent="Spawners" groups=[
+[node name="ZombieSpawner5" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 3 )]
 position = Vector2( 1346.12, 457.171 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner10" parent="Spawners" groups=[
+[node name="ZombieSpawner10" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 3 )]
 position = Vector2( 2085.76, 1142.1 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner6" parent="Spawners" groups=[
+[node name="ZombieSpawner6" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 3 )]
 position = Vector2( 1800.11, 854.022 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="ZombieSpawner7" parent="Spawners" groups=[
+[node name="ZombieSpawner7" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 3 )]
 position = Vector2( 2787.48, 463.521 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SpiderSpawner6" parent="Spawners" groups=[
+[node name="SpiderSpawner6" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 4 )]
 position = Vector2( 2816.05, 1520.73 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SkeletonSpawner4" parent="Spawners" groups=[
+[node name="SkeletonSpawner4" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 8 )]
 position = Vector2( 2123.94, 1400.09 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SkeletonSpawner7" parent="Spawners" groups=[
+[node name="SkeletonSpawner7" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 8 )]
 position = Vector2( 1256.45, 1107.7 )
 enabled = false
 spawn_cooldown = 10.0
 
-[node name="SkeletonSpawner8" parent="Spawners" groups=[
+[node name="SkeletonSpawner8" parent="YSort/Spawners" groups=[
 "4",
 ] instance=ExtResource( 8 )]
 position = Vector2( 1377.86, 981.014 )
@@ -184,22 +203,6 @@ position = Vector2( 1857.26, 1003.24 )
 scale = Vector2( 33, 20 )
 group_affected = "4"
 
-[node name="Casettes" type="YSort" parent="."]
-__meta__ = {
-"_edit_lock_": true
-}
-
-[node name="Cassette" parent="Casettes" instance=ExtResource( 7 )]
-position = Vector2( -1531.53, -719.816 )
-
-[node name="Cassette2" parent="Casettes" instance=ExtResource( 7 )]
-position = Vector2( 549.241, -758.778 )
-
-[node name="Cassette3" parent="Casettes" instance=ExtResource( 7 )]
-position = Vector2( 2790.65, -806.4 )
-
-[node name="Cassette4" parent="Casettes" instance=ExtResource( 7 )]
-position = Vector2( 2447.77, 952.44 )
-
 [node name="UI" parent="." instance=ExtResource( 11 )]
 [connection signal="bis_cued" from="TrackPlayer" to="UI" method="play_solo"]
+[connection signal="bis_ended" from="TrackPlayer" to="." method="_on_TrackPlayer_bis_ended"]
