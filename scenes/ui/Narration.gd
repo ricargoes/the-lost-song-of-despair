@@ -1,6 +1,8 @@
 extends Control
 
 func _ready():
+	for dialogue in $VBoxContainer/MarginContainer.get_children():
+		dialogue.clear_colors()
 	set_process_input(true)
 
 func _input(event):
