@@ -11,7 +11,7 @@
 [ext_resource path="res://scenes/entities/hazards/Cassette.tscn" type="PackedScene" id=11]
 [ext_resource path="res://scenes/ui/UI.tscn" type="PackedScene" id=12]
 
-[node name="World" type="Node2D"]
+[node name="Level2" type="Node2D"]
 script = ExtResource( 3 )
 char_max_speed = 3
 

@@ -25,7 +25,10 @@ func _input(event):
 
 func _on_Retry_pressed():
 	if Global.playing_story:
-		var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
+		if Global.songs_listened < 1:
+			var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
+		else:
+			var _unused = get_tree().change_scene("res://scenes/level/Level2.tscn")
 	else:
 		var _unused = get_tree().change_scene("res://scenes/level/Endless.tscn")
 
