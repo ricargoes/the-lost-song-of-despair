@@ -13,7 +13,7 @@ func _on_Story_pressed():
 	Global.playing_story = true
 	var narration = get_parent().get_node("Narration")
 	narration.show()
-	narration.get_node("AnimationPlayer").play()
+	narration.get_node("AnimationPlayer").play("Scroll")
 
 func _on_Quit_pressed():
 	get_tree().quit()

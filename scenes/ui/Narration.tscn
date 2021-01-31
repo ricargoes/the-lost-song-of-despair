@@ -175,6 +175,7 @@ margin_right = 500.0
 margin_bottom = 350.0
 
 [node name="page1" type="TextEdit" parent="VBoxContainer/MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 500.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 500, 350 )
@@ -274,6 +275,7 @@ selecting_enabled = false
 wrap_enabled = true
 
 [node name="page7" type="TextEdit" parent="VBoxContainer/MarginContainer"]
+modulate = Color( 1, 1, 1, 0 )
 margin_right = 500.0
 margin_bottom = 350.0
 rect_min_size = Vector2( 500, 350 )
