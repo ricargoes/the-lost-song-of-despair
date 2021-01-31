@@ -7,10 +7,12 @@ func _ready():
 	if Global.have_won:
 		title_label.text = "You win."
 		text_edit.text = "You have have won."
+		$VBoxContainer/TextureRect.texture = preload("res://scenes/ui/solo_cinem.tres")
 		$VBoxContainer/HBoxContainer2/Retry.hide()
 	else:
 		title_label.text = "Game Over."
 		text_edit.text = "You have listened to "+str(Global.songs_listened)+" and collected "+str(Global.difficulty)+" tracks of the next one. May the power of metal go with you next time."
+		$VBoxContainer/TextureRect.texture = preload("res://scenes/ui/platypus_death.tres")
 	
 	Global.have_won = false
 	set_process_input(true)
