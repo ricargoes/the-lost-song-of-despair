@@ -1,0 +1,46 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/level/World.gd" type="Script" id=3]
+[ext_resource path="res://scenes/entities/actors/PlatypusHeavy.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/level/PalaceAutotile.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/TrackPlayer.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/entities/hazards/Cassette.tscn" type="PackedScene" id=11]
+[ext_resource path="res://scenes/ui/UI.tscn" type="PackedScene" id=12]
+
+[node name="World" type="Node2D"]
+script = ExtResource( 3 )
+char_max_speed = 3
+
+[node name="Navigation2D" type="Navigation2D" parent="."]
+
+[node name="TileMap" parent="Navigation2D" instance=ExtResource( 5 )]
+tile_data = PoolIntArray( -131065, 0, 0, -131064, 0, 0, -131063, 0, 0 )
+
+[node name="TrackPlayer" parent="." instance=ExtResource( 10 )]
+song_n = 1
+cue_bis_after_loop = true
+
+[node name="UI" parent="." instance=ExtResource( 12 )]
+
+[node name="YSort" type="YSort" parent="."]
+
+[node name="PlatypusHeavy" parent="YSort" instance=ExtResource( 4 )]
+position = Vector2( 621.797, 268.197 )
+
+[node name="Things" type="YSort" parent="YSort"]
+
+[node name="Cassette" parent="YSort/Things" instance=ExtResource( 11 )]
+position = Vector2( 1250.74, 419.139 )
+
+[node name="Cassette2" parent="YSort/Things" instance=ExtResource( 11 )]
+position = Vector2( 1233.77, 156.095 )
+
+[node name="Cassette3" parent="YSort/Things" instance=ExtResource( 11 )]
+position = Vector2( 1230.72, 229.592 )
+
+[node name="Cassette4" parent="YSort/Things" instance=ExtResource( 11 )]
+position = Vector2( 1230.72, 337.714 )
+
+[node name="Enemies" type="YSort" parent="YSort"]
+[connection signal="bis_cued" from="TrackPlayer" to="UI" method="play_solo"]
+[connection signal="bis_ended" from="TrackPlayer" to="." method="_on_TrackPlayer_bis_ended"]
