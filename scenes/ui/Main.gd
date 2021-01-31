@@ -10,7 +10,7 @@ func _on_Endless_pressed():
 
 func _on_Story_pressed():
 	Global.playing_story = true
-	var _unused = get_tree().change_scene("res://scenes/level/World.tscn")
+	get_parent().get_node("Transition").show()
 
 func _on_Quit_pressed():
 	get_tree().quit()

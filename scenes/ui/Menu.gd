@@ -16,3 +16,5 @@ func _input(event):
 	
 	if event.is_action_pressed("shoot"):
 		$Title.visible = false
+		if $Transition.visible:
+			var _unused = get_tree().change_scene("res://scenes/level/World.tscn")
