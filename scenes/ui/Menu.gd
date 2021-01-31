@@ -13,8 +13,6 @@ func _input(event):
 			$Title.visible = false
 		else:
 			get_tree().quit()
-	
 	if event.is_action_pressed("shoot"):
-		$Title.visible = false
-		if $Transition.visible:
-			var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
+		if $Title.visible:
+			$Title.visible = false

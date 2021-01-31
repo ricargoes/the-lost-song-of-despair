@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=2]
+[gd_scene load_steps=16 format=2]
 
 [ext_resource path="res://scenes/ui/theme.tres" type="Theme" id=1]
 [ext_resource path="res://scenes/ui/Main.gd" type="Script" id=2]
@@ -7,7 +7,6 @@
 [ext_resource path="res://resources/sprites/ui/9patch.png" type="Texture" id=5]
 [ext_resource path="res://scenes/ui/Title.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/ui/Menu.gd" type="Script" id=7]
-[ext_resource path="res://resources/fonts/Nefthypos-Regular-Complete.ttf" type="DynamicFontData" id=8]
 [ext_resource path="res://resources/sprites/platypusheavy/Duke_running_FW5.Png" type="Texture" id=9]
 [ext_resource path="res://resources/sprites/platypusheavy/Duke_running_FW4.Png" type="Texture" id=10]
 [ext_resource path="res://resources/sprites/platypusheavy/Duke_running_FW2.Png" type="Texture" id=11]
@@ -31,10 +30,6 @@ grow_begin = -3.0
 grow_end = -3.0
 thickness = 2
 vertical = true
-
-[sub_resource type="DynamicFont" id=3]
-size = 22
-font_data = ExtResource( 8 )
 
 [node name="Menu" type="Control"]
 anchor_right = 1.0
@@ -157,9 +152,9 @@ margin_bottom = 64.0
 rect_min_size = Vector2( 200, 0 )
 
 [node name="TextEdit" type="TextEdit" parent="Main/Main/TextBox/MarginContainer/HBoxContainer/CenterContainer"]
-margin_left = 4.0
+margin_left = 5.0
 margin_top = 19.0
-margin_right = 194.0
+margin_right = 195.0
 margin_bottom = 44.0
 rect_min_size = Vector2( 190, 25 )
 text = "Pick your poison!"
@@ -186,50 +181,6 @@ text = "Quit"
 
 [node name="Title" parent="." instance=ExtResource( 6 )]
 visible = false
-
-[node name="Transition" type="ColorRect" parent="."]
-visible = false
-anchor_right = 1.0
-anchor_bottom = 1.0
-color = Color( 0, 0, 0, 1 )
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="CenterContainer" type="CenterContainer" parent="Transition"]
-anchor_right = 1.0
-anchor_bottom = 1.0
-__meta__ = {
-"_edit_use_anchors_": false
-}
-
-[node name="VBoxContainer" type="VBoxContainer" parent="Transition/CenterContainer"]
-margin_left = 235.0
-margin_top = 65.0
-margin_right = 735.0
-margin_bottom = 474.0
-custom_constants/separation = 40
-
-[node name="TextEdit" type="TextEdit" parent="Transition/CenterContainer/VBoxContainer"]
-margin_right = 500.0
-margin_bottom = 350.0
-rect_min_size = Vector2( 500, 350 )
-custom_colors/font_color_readonly = Color( 1, 1, 1, 1 )
-text = "A long, long time ago, so long that no one remembers it -not even your humble narrator, who is reading it, amazed, in an old manuscript that he just found.. err where was I..-, there was a song. Whoever possessed it would gain supreme power that would make his enemies despair.
-
-But the song was broken into 4 pieces and lost. (Probably at a rave, or afterwards during the hangover )
-
-A badass platypus without name, the chosen of the gods of Metal, is now trying to find the four cassetes and make the song whole again. He, covered in sweat, blood and beer, will stop at nothing and is willing to rip the pieces from the cold dead hands of his enemies. He is looking forward to it actually."
-readonly = true
-wrap_enabled = true
-
-[node name="Label" type="Label" parent="Transition/CenterContainer/VBoxContainer"]
-margin_top = 390.0
-margin_right = 500.0
-margin_bottom = 409.0
-custom_fonts/font = SubResource( 3 )
-text = "Press click to kick ass"
-align = 1
 [connection signal="mouse_entered" from="Main/Main/Story" to="Main" method="_on_Story_mouse_entered"]
 [connection signal="mouse_exited" from="Main/Main/Story" to="Main" method="default_explanation"]
 [connection signal="pressed" from="Main/Main/Story" to="Main" method="_on_Story_pressed"]

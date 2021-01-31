@@ -11,7 +11,11 @@ func _on_Endless_pressed():
 
 func _on_Story_pressed():
 	Global.playing_story = true
-	get_parent().get_node("Transition").show()
+	if not Global.narration_shown:
+		Global.narration_shown = true
+		var _unused = get_tree().change_scene("res://scenes/ui/Narration.tscn")
+	else:
+		var _unused = get_tree().change_scene("res://scenes/level/Level1.tscn")
 
 func _on_Quit_pressed():
 	get_tree().quit()
