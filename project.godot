@@ -16,7 +16,7 @@ _global_script_class_icons={
 [application]
 
 config/name="The Lost Song of Despair"
-run/main_scene="res://scenes/ui/Title.tscn"
+run/main_scene="res://scenes/ui/Main.tscn"
 boot_splash/fullsize=false
 boot_splash/use_filter=false
 config/icon="res://resources/sprites/platypusheavy/Duke_running_right3.png"
