@@ -50,11 +50,12 @@ animations = [ {
 } ]
 
 [node name="Spider" instance=ExtResource( 1 )]
+hits_per_level = 0.6
+speed_increment_per_level = 0.1
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
 animation = "down"
-frame = 3
 playing = true
 
 [node name="CollisionShape2D" parent="." index="1"]

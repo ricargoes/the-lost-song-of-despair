@@ -60,6 +60,9 @@ animations = [ {
 } ]
 
 [node name="Zombie" instance=ExtResource( 3 )]
+hits = 3
+relative_speed = 0.5
+hits_per_level = 0.8
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )

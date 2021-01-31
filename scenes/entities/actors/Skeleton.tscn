@@ -59,6 +59,10 @@ animations = [ {
 } ]
 
 [node name="Skeleton" instance=ExtResource( 4 )]
+hits = 1
+relative_speed = 0.65
+hits_per_level = 0.0
+speed_increment_per_level = 0.1
 
 [node name="AnimatedSprite" parent="." index="0"]
 frames = SubResource( 1 )
