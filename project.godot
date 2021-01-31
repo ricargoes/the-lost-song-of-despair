@@ -16,7 +16,9 @@ _global_script_class_icons={
 [application]
 
 config/name="The Lost Song of Despair"
-run/main_scene="res://scenes/ui/Main.tscn"
+run/main_scene="res://scenes/ui/Title.tscn"
+boot_splash/fullsize=false
+boot_splash/use_filter=false
 config/icon="res://resources/sprites/platypusheavy/Duke_running_right3.png"
 
 [autoload]
@@ -79,4 +81,5 @@ quit={
 
 [rendering]
 
+environment/default_clear_color=Color( 0, 0, 0, 1 )
 environment/default_environment="res://default_env.tres"
