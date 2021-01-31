@@ -12,5 +12,5 @@ func _on_Activator_body_entered(body):
 func _on_Activator_body_exited(body):
 	var spawners = get_tree().get_nodes_in_group(group_affected)
 	for spawner in spawners:
-		if spawner.has("disable"):
+		if spawner.has_method("disable"):
 			spawner.disable()
