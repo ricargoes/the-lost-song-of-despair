@@ -10,7 +10,11 @@ func _ready():
 	Global.nav_node = find_node("Navigation2D")
 	Global.difficulty = 0
 	$TrackPlayer.step_up()
+	set_process_input(true)
 
+func _input(event):
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
 
 func _on_TrackPlayer_bis_ended():
 	Global.game_over(true)

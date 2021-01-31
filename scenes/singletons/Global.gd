@@ -19,13 +19,6 @@ var ui_node = null
 
 var show_title = true
 
-func _ready():
-	set_process_input(true)
-
-func _input(event):
-	if event.is_action_pressed("quit"):
-		get_tree().quit()
-
 func game_over(winning):
 	have_won = winning
 	print("Game Over")

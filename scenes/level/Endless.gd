@@ -7,7 +7,11 @@ func _ready():
 	spawn_cassetes()
 	activate_spawner_group()
 	Global.songs_listened = 0
+	set_process_input(true)
 
+func _input(event):
+	if event.is_action_pressed("quit"):
+		get_tree().quit()
 
 func _on_TrackPlayer_bis_ended():
 	reset_song()
