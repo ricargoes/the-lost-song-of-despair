@@ -8,6 +8,7 @@ export var hits_per_level = 0.5
 export var speed_increment_per_level = 0.05
 
 func _ready():
+	randomize()
 	set_physics_process(true)
 	hits += Global.difficulty*hits_per_level
 	relative_speed+= Global.difficulty*speed_increment_per_level
@@ -21,24 +22,26 @@ func _physics_process(delta):
 		return
 	
 	var platypus = get_tree().get_nodes_in_group("platypus")[0]
-	var points = Global.nav_node.get_simple_path(position, platypus.position, false)
+	var move_dir = Vector2(randf(), randf()).normalized()
+	if (platypus.position - position).length() < 1000:
+		var points = Global.nav_node.get_simple_path(position, platypus.position, false)
+		if points.size() > 0:
+			move_dir = (points[1] - position).normalized()
 	
-	if points.size() > 0:
-		var move_dir = (points[1] - position).normalized()
-		if move_dir.x > cos_45:
-			$AnimatedSprite.play("right")
-		elif move_dir.x < -cos_45:
-			$AnimatedSprite.play("left")
-		elif move_dir.y > cos_45:
-			$AnimatedSprite.play("down")
-		elif move_dir.y < -cos_45:
-			$AnimatedSprite.play("up")
-		
-		var collision = Global.ground_slide_or_collide(self, move_dir*Global.char_max_speed*relative_speed)
-		if collision:
-			if collision.collider.is_in_group("platypus"):
-				collision.collider.hit()
-				die()
+	if move_dir.x > cos_45:
+		$AnimatedSprite.play("right")
+	elif move_dir.x < -cos_45:
+		$AnimatedSprite.play("left")
+	elif move_dir.y > cos_45:
+		$AnimatedSprite.play("down")
+	elif move_dir.y < -cos_45:
+		$AnimatedSprite.play("up")
+	
+	var collision = Global.ground_slide_or_collide(self, move_dir*Global.char_max_speed*relative_speed)
+	if collision:
+		if collision.collider.is_in_group("platypus"):
+			collision.collider.hit()
+			die()
 
 func hit(damage=1):
 	hits -= damage
