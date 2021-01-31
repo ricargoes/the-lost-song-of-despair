@@ -7,8 +7,11 @@ export var relative_speed = 0.75
 export var hits_per_level = 0.5
 export var speed_increment_per_level = 0.05
 
+var default_move_dir = Vector2.DOWN
+
 func _ready():
 	randomize()
+	default_move_dir = Vector2(randf(), randf()).normalized()
 	set_physics_process(true)
 	hits += Global.difficulty*hits_per_level
 	relative_speed+= Global.difficulty*speed_increment_per_level
@@ -22,7 +25,7 @@ func _physics_process(delta):
 		return
 	
 	var platypus = get_tree().get_nodes_in_group("platypus")[0]
-	var move_dir = Vector2(randf(), randf()).normalized()
+	var move_dir = default_move_dir
 	if (platypus.position - position).length() < 1000:
 		var points = Global.nav_node.get_simple_path(position, platypus.position, false)
 		if points.size() > 0:
@@ -42,6 +45,7 @@ func _physics_process(delta):
 		if collision.collider.is_in_group("platypus"):
 			collision.collider.hit()
 			die()
+		default_move_dir = Vector2(randf(), randf()).normalized()
 
 func hit(damage=1):
 	hits -= damage
