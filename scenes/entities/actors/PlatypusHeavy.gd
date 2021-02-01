@@ -8,6 +8,7 @@ func _ready():
 	set_physics_process(true)
 
 func _physics_process(delta):
+	zoom_camera()
 	var move_dir = get_move_direction()
 	var collision = move_and_collide(move_dir*Global.char_max_speed)
 	
@@ -47,7 +48,14 @@ func get_move_direction():
 	
 func get_look_direction():
 	return get_global_transform().get_origin().direction_to(get_global_mouse_position()).normalized()
-	
+
+func zoom_camera():
+	if Input.is_action_just_released("zoom_in"):
+		$Camera2D.zoom.x = max($Camera2D.zoom.x - 0.05, 0.5)
+		$Camera2D.zoom.y = max($Camera2D.zoom.y - 0.05, 0.5)
+	if Input.is_action_just_released("zoom_out"):
+		$Camera2D.zoom.x = min($Camera2D.zoom.x + 0.05, 1.1)
+		$Camera2D.zoom.y = min($Camera2D.zoom.y + 0.05, 1.1)
 
 func shoot(dir, standing):
 	var bullet
