@@ -15,4 +15,9 @@ relative_speed = 0.6
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 
 [node name="DeadAnim" type="AnimatedSprite" parent="."]
+
+[node name="PathfindingRefresh" type="Timer" parent="."]
+wait_time = 0.2
+autostart = true
 [connection signal="animation_finished" from="DeadAnim" to="." method="_on_DeadAnim_animation_finished"]
+[connection signal="timeout" from="PathfindingRefresh" to="." method="_on_PathfindingRefresh_timeout"]
